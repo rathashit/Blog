@@ -1,0 +1,53 @@
+<% @page_title = "View Section"%>
+<div class="buttons" style="width: 1000px;margin:auto;margin-bottom: 10px;">
+		<div class="back-link">
+			<%= link_to("Back to Sections", {:action => 'index', :page_id => @page.id}) %>
+		</div>
+	</div>
+<div class="page-show">
+	<div class="view">
+		<ul>
+			<li>
+				<h4>Name</h4>
+				<p><%= @section.name %></p>
+			</li>
+			<li>
+				<h4>Page name</h4>
+				<p><%= @section.page.title %></p>
+			</li>
+			<li>
+				<h4>Position</h4>
+				<p><%= @section.position %></p>
+			</li>
+			<li>
+				<h4>Visible</h4>
+				<p><%= status_tag(@section.visible) %></p>
+			</li>
+			<li>
+				<h4>Image</h4>
+				
+					<% if @section.img_url? %>
+						<p>
+							<%= image_tag @section.img_url_url(:thumb) %>
+							<%= link_to("Remove", :action => 'remove_img', :id => @section.id, :page_id => @page.id) %>
+						</p>
+					<% else %>
+						<p><%= image_tag('default-no-img.jpg') %></p>
+					<% end %>
+				
+			</li>
+			<% if @section.img_url? %>
+				<li>		
+					<h4>Image Description</h4>
+					<p><%= @section.img_desc %></p>
+				</li>
+			<% else %>
+						
+			<% end %>
+			<li>
+				<h4>Content : </h4>
+				<p><%= @section.content %></p>
+			</li>
+		</ul>
+	</div>
+</div>

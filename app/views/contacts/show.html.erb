@@ -1,0 +1,24 @@
+<% @page_title = "View Message"%>
+<div class="buttons" style="width: 1000px;margin:auto;margin-bottom: 10px;">
+		<div class="back-link">
+			<%= link_to("Back to Messages", {:action => 'index'}) %>
+		</div>
+	</div>
+<div class="page-show">
+	<div class="view">
+		<ul>
+			<li>
+				<h4>Name</h4>
+				<p><%= @message.name %></p>
+			</li>
+			<li>
+				<h4>E-mail</h4>
+				<p><%= @message.email %></p>
+			</li>
+			<li>
+				<h4>Message</h4>
+				<p><%= @message.message %></p>
+			</li>
+		</ul>
+	</div>
+</div>

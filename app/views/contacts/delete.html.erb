@@ -1,0 +1,12 @@
+<% @page_title = "Message Delete Confirmation"%>
+<div class="buttons" style="width: 1000px;margin:auto;margin-bottom: 10px;">	
+	<div class="back-link">
+			<%= link_to("Back to Messages", {:action => 'index'}) %>
+	</div>
+</div>
+<div class="page-delete">
+	<p> Do you want to delete message from <strong><%= @message.name %></strong> permanently ? </p>
+	<%= form_for(:section, :url => {:action => 'destroy', :id => @message.id}) do |f| %>
+		<%= submit_tag("Delete Message") %>
+	<% end %>
+</div>

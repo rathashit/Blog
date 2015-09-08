@@ -1,0 +1,218 @@
+// Place all the styles related to the Public controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body
+{
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	z-index: 1;
+	background-color: red;
+	background:  url('pattern21.png');
+	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	border: 5px solid black;
+}
+header
+{
+	padding: 0;
+	margin: 0;
+	background: #2C3E50;
+	height: 155px;
+	min-width: 100%;
+}
+
+.wrapper
+{
+	width: 1200px;
+	margin: auto;
+	overflow: hidden;
+	z-index: 2;
+	background: white;
+	/*border: 2px solid black;*/
+	height: auto;
+	box-shadow: 0px 5px 20px 0px #c5c5c5;
+}
+
+.right-content
+{
+	left: clear;
+	/*padding-right: 50px;*/
+	margin: auto;
+	margin-left: 75px;
+	position: relative;
+	overflow: hidden;
+	/*box-shadow: -30px 20px 50px 0px #d5d5d5;*/
+	max-width: 280px;
+	float: left;
+	border: 2px black;
+	padding-top: 80px;
+}
+.left-content
+{
+	z-index: 3;
+	/*box-shadow: 40px 10px 150px 0px #d5d5d5;*/
+	overflow: hidden;
+	position: relative;
+	width: 660px;
+	float: left;
+	padding-right: 52px;
+	margin-left: 50px;
+	padding-top: 80px;
+	border-right: 2px solid #d5d5d5;
+}
+
+.page .image
+{
+	min-width: 320px;
+	float: left;
+}
+.container
+{
+	width: 1200px;
+	margin: auto;
+	height: auto;
+}
+
+.container .logo
+{
+	margin-left: 65px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+}
+.container .logo img
+{
+	margin-top: 10px;
+	height: 120px;
+	width: 125px;
+}
+
+nav
+{
+	float: right;
+	margin-right: 65px;
+	margin-top: 50px;
+}
+nav a
+{
+	text-decoration: none;
+	display: inline;
+	color: #F3B562;
+	padding-left: 18px;
+	font-size: 15px;
+}
+
+.inner-wrap
+{
+	min-width: 320px;
+	min-height: 200px;
+	position: relative;
+
+	/*margin-left: 20px;*/
+}
+
+.page .title
+{
+	color: #de3033;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.info li
+{
+	display: inline;
+	padding-right: 10px;
+	color: #989ca0;
+	font-size: 12px;
+}
+.continue-link
+{
+	float: right;
+	color: #f74447;
+	font-size: 16px;
+	position: absolute;
+    bottom: 0;
+    right: 0;
+    /*display: inline;*/
+    clear: right;
+
+}
+.continue-link p
+{
+	display: inline;
+}
+#arrow
+{
+	font-weight: bold;
+	font-size: 25px;
+	position: relative;
+	bottom: -4px;
+}
+.desc
+{
+	font-size: 15px;
+	color: #2c3e50;
+	/*font-weight: bold;*/
+}
+.page
+{
+
+    clear: left;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+	border-bottom: 1px solid #d5d5d5;
+
+}
+
+.post-wraper
+{
+	border-bottom: 2px solid #de3033;
+	margin-bottom: 50px;
+}
+.post-wraper h3
+{
+	/*border: 1px solid black;*/
+	margin: auto;
+	text-align: center;
+	font-size: 24px;
+	color: #2C3E50;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #de3033;
+}
+
+/*.post-wraper ul li*/
+.post-wraper ul li
+{
+	text-align: left;
+	margin-left: -10px;
+	padding: 10px 0px;
+	border-bottom: 1px solid #2C3E50;
+	font-size: 14px;
+}
+.post-wraper ul li:last-child
+{
+	padding: 10px 0px;
+	border-bottom: 0px solid #2C3E50;
+}
+
+footer
+{
+	padding: 0;
+	margin: 0;
+	background: #2C3E50;
+	height: 120px;
+	width: 100%;
+	overflow: hidden;	
+}
+.footer-wrap
+{
+	max-width: 1200px;
+	margin: auto;
+}
+.copyright p
+{
+	margin-top: 95px;
+	margin-left: 20px;
+	color: #F3B562;
+	font-size: 14px;
+} 

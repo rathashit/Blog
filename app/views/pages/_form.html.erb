@@ -1,0 +1,25 @@
+<%= error_messages_for(@page) %>
+<div id="form-center">
+      <ul>
+            <li>
+                  <%= f.label :title %>
+                  <%= f.text_field :title %>
+            </li>
+            <li>
+                  <%= f.label :image_url %>
+                  <%= f.file_field :image_url %>
+            </li>
+            <li>
+                  <%= f.label :category_id, "Category" %>
+                  <%= f.select :category_id, @categories.collect { |p| [p.name, p.id ]}, include_blank: true  %>  
+            </li>
+            <li>
+                  <%= f.label :visible %>
+                  <%= f.check_box :visible %>
+            </li>
+            <li>
+                  <%= f.label :content %>
+                  <%= f.text_area :content %>
+            </li>
+      </ul>
+</div>

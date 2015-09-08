@@ -1,0 +1,33 @@
+<%= error_messages_for(@section) %>
+<div id="form-center">
+	<ul>
+			<li>
+				<%= f.label :name %>
+				<%= f.text_field(:name) %>
+			</li>
+			<li>
+				<%= f.label :page_name %>
+				<%= f.text_field(:page_name, :value => @page.title, :readonly => true) %>
+			</li>
+			<li>
+				<%= f.label :position %>		
+				<%= f.select(:position, 1..@position_count) %>
+			</li>
+			<li>
+				<%= f.label :visible %>
+				<%= f.check_box(:visible) %>
+			</li>
+			<li>
+				<%= f.label :img_url,"Image" %>
+				<%= f.file_field(:img_url) %>
+			</li>
+			<li>
+				<%= f.label :img_url,"Image Title" %>
+				<%= f.text_field(:img_desc) %>
+			</li>
+			<li>
+				<%= f.label :content %>
+				<%= f.text_area(:content) %>
+			</li>
+	</ul>
+</div>

@@ -1,0 +1,21 @@
+<%= error_messages_for(@contact) %>
+<div class="contact-me">
+	<h1>Contact</h1>
+	<%= form_for(:contact, :url => {:action => 'save_message'}) do |f|	%>
+		<ul>
+			<li>
+				<%= f.label(:name, "Name") %>
+				<%= f.text_field(:name) %>
+			</li>
+			<li>
+				<%= f.label(:email, "Email") %>
+				<%= f.text_field(:email) %>
+			</li>
+			<li>
+				<%= f.label(:message, "Message") %>
+				<%= f.text_area(:message) %>
+			</li>
+		</ul>
+		<%= submit_tag("Send") %>
+	<% end %>
+</div>

@@ -1,0 +1,65 @@
+<% @page_title = "Message Center" %>
+<div class="pages-index">
+	<div class="page-content">
+		<div class="buttons">
+			<div class='back-link'>
+				<%= link_to('Back to Menu', {:action => 'index', :controller => 'access'}) %>
+			</div>
+		</div>
+		<div class="page-name"><p> Unread Messages </p></div>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Message snipet</th>
+					<th>Sent At</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<% @unreadContacts.each do |contact| %>
+				<tbody>
+					<tr>
+						<td class="w150"><%= contact.name %></td>			
+						<td class="w200"><%= contact.email %></td>
+						<td class="w300"><%= truncate(contact.message,:length => 40) %></td>
+						<td class="created-at"><%= contact.created_at.strftime("%-d %b %Y %I:%M %p") %></td>
+						<td class="action">
+							<%= link_to("Show",{:action => 'show', :id => contact.id}) %>
+							<%= link_to("Delete",{:action => 'delete', :id => contact.id}) %>
+						</td> 
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+	<br><br><br><br><br><br>
+	<div class="page-content">
+	<div class="page-name"><p> Read Messages </p></div>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Message snipet</th>
+					<th>Sent At</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<% @readContacts.each do |contact| %>
+				<tbody>
+					<tr>
+						<td class="w150"><%= contact.name %></td>			
+						<td class="w200"><%= contact.email %></td>
+						<td class="w300"><%= truncate(contact.message,:length => 38) %></td>
+						<td class="created-at"><%= contact.created_at.strftime("%-d %b %Y %I:%M %p") %></td>
+						<td class="action">
+							<%= link_to("Show",{:action => 'show', :id => contact.id}) %>
+							<%= link_to("Delete",{:action => 'delete', :id => contact.id}) %>
+						</td> 
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+</div>

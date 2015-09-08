@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'public', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'font-awesome' %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="public">
+	<header>
+		<div class="container">
+			<div class="logo"><img src="/assets/title.png"></div>
+			<nav>
+			<ul>
+				<%= link_to("BLOG", :action => 'index' ) %>
+				<%= link_to("ABOUT", :action => 'about') %>
+				<%= link_to("CONTACT ME", :action => 'contact') %>
+			</ul>
+		<nav>
+		</div>
+	</header>
+	
+	<div class="wrapper">
+		<% if !flash.empty? %>
+			<div class="notice">
+				<p><%= flash[:notice] %></p>
+			</div>
+		<% end %>
+	 	<%= yield %>
+	</div>
+	<footer>
+		<div class="footer-wrap">
+			<div class="copyright">
+		 		<p> © 2015, Ashit Rath | All Rights Reserved</p>
+		 		
+			</div>
+			<div class="social-links">
+			
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

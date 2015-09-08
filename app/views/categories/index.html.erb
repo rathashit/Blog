@@ -1,0 +1,35 @@
+<% @page_title = "Categories"%>
+<div class="pages-index">
+	<div class="buttons">
+		<div class='back-link'>
+			<%= link_to('Back to Menu', {:action => 'index', :controller => 'access'}) %>
+		</div>
+		<div class="add-new">
+			<%= link_to("Add new page", {:action => 'new'}) %>
+		</div>
+	</div>
+	<div class="page-content">
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Image</th>
+				<th>Description</th>
+				<th>Created at</th>
+				<th>Actions</th>
+			</tr>
+			<% @categories.each do |category| %>
+			<tr>
+				<td><%= category.name %></td>
+				<td><%= category.img_url %></td>
+				<td><%= category.desc %></td>
+				<td><%= category.created_at %></td>
+				<td class="action">
+					<%= link_to("Show",{:action => 'show', :id => category.id}) %>
+					<%= link_to("Edit",{:action => 'edit', :id => category.id}) %>
+					<%= link_to("Delete",{:action => 'delete', :id => category.id}) %>
+				</td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+</div>

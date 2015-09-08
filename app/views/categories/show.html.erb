@@ -1,0 +1,28 @@
+<div class="category_show">
+	<div class="back_link">
+		<%= link_to("<<Back to category listing", {:action => 'index'}) %>
+	</div>
+	<h3>Category details</h3>
+	<table>
+		<tr>
+			<th>Name : </th>
+			<td><%= @category.name %></td>
+		</tr>
+		<tr>
+			<th>Image : </th>
+			<td><%= @category.img_url %></td>
+		</tr>
+		<!-- <tr>
+			<th>Visible : </th>
+			<td><#%= @page.visible ? "True" : "False" %></td>
+		</tr> -->
+		<tr>
+			<th>Priority : </th>
+			<td><%= @category.priority %></td>
+		</tr>
+		<tr>
+			<th>Description : </th>
+			<td><%= @category.desc %></td>
+		</tr>
+	</table>
+</div>

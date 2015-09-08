@@ -1,0 +1,19 @@
+<% @page_title = "New Category"%>
+<div class="page-form">
+  <div class="buttons">
+    <div class="back-link">
+          <%= link_to("Back to Categories", {:action => 'index'}) %>
+    </div>
+  </div>
+	<div class="form">
+        
+    <%= form_for(:category, :url => {:action => 'create'}) do |f| %>
+      <div id="inner-form">
+        <%= render(:partial => 'form', :locals => {:f => f}) %>
+      </div>
+	    <div class="buttons">
+        <%= submit_tag("Create Category") %>
+      </div>
+    <% end %>
+  </div>
+</div>

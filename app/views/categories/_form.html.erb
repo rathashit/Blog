@@ -1,0 +1,18 @@
+<%= error_messages_for(@category) %>
+<div id="form-center">
+	<ul>
+		<li>
+			<%= f.label :name %>
+			<%= f.text_field(:name) %>
+		</li>
+		<li>
+	        <%= f.label :image_url %> 
+	        <%= f.file_field :img_url %> 
+	      </li>
+	      <li>
+			<%= f.label :desc, 'Description' %> 
+			<%= f.text_area :desc, :id => 'category-area' %> 
+		</li>
+	</ul>
+	
+</div>

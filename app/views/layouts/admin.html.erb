@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag 'admins', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<div id="admin-top"><h1>Admin Area</h1></div>
+			<nav>
+			
+				<%= link_to("HOME", {:action => 'index', :controller => 'Access'}) %>
+				<%= link_to("LOGOUT", {:action => 'logout', :controller => 'Access'}) %>
+			<nav>
+	</header>
+
+	<div class="wrapper">
+		<div class="title-page">
+			<h2><%= @page_title %></h2>
+		</div>
+		<% if !flash.empty? %>
+			<div class="notice">
+				<p><%= flash[:notice] %></p>
+			</div>
+		<% end %>
+	 		<%= yield %>
+	</div>
+
+	<footer>
+		<div class="footer-wrap">
+			<div class="copyright">
+		 		<p> © 2015, Ashit Rath | All Rights Reserved</p>
+		 		
+			</div>
+			
+		</div>
+	</footer>
+		
+</body>
+</html>

@@ -1,0 +1,15 @@
+<% @page_title ="Menu" %>
+<div class="admin-area">
+	<table>
+		<tr>
+			<td><%= link_to("Manage Pages", {:action => 'index', :controller => 'Pages'} ) %> </td>
+			
+		</tr>
+		<tr>
+			<td><%= link_to("Categories", {:action => 'index', :controller => 'Categories'} ) %> </td>
+		</tr>
+		<tr>
+			<td><%= link_to("Messages", {:action => 'index', :controller => 'Contacts'} ) %></td>
+		</tr>
+	</table>
+</div>

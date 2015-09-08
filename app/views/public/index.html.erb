@@ -1,0 +1,45 @@
+<div class="left-content">
+	<% @pages.each do |page| %>
+		<div class="page">
+			<div class="image">
+				<% if page.image_url? %>
+					<%= link_to(image_tag page.image_url.url(:thumb), {:action => 'view', :permalink => page.permalink}) %>
+				<% else %>
+					<%= link_to(image_tag("default-no-img.jpg"), {:action => 'view', :permalink => page.permalink}) %>
+				<% end %>
+			</div>
+			<div class="inner-wrap">
+				<div class="title"><%= link_to("#{page.title}", {:action => 'view', :permalink => page.permalink}) %></div>	
+				<div class="info">
+					<ul>
+						<li><%= page.created_at.to_s(:long) %></li>
+						<li><%= page.admin_users[0].first_name + " " + page.admin_users[0].last_name%></li>
+					</ul>
+				</div>
+				<% section = page.sections.order('position asc').where('visible = true').first %>
+				<div class="desc">
+					<p><%= truncate(strip_tags(section.content),length: 80) %></p>
+				</div>
+				<div class="continue-link"><p><%= link_to('continue reading', {:action => 'view', :permalink => page.permalink}) %></p> <p id='arrow'>&#10141</p></div>
+			</div>
+		</div>	
+	<% end %>
+</div>
+<div class="right-content">
+	<div class="post-wraper">
+		<h3>Latest Posts</h3>
+		<ul>
+			<% @latestPages.each do |page| %>
+			<li><%= link_to(page.title, {:action => 'view', :permalink => page.permalink}) %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="post-wraper">
+		<h3>Most Popular Posts</h3>
+		<ul>
+			<% @popularPages.each do |page| %>
+			<li><%= link_to(page.title, {:action => 'view', :permalink => page.permalink}) %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>

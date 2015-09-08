@@ -1,0 +1,21 @@
+<div class="admin_show">
+	<div class="back_link">
+		<%= link_to("<<Back to admin listing", {:action => 'index'}) %>
+	</div>
+	<h3>Admin details</h3>
+	<table>
+		<tr>
+			<th>Name : </th>
+			<td><%= @admin.first_name + " " + @admin.last_name %></td>
+		</tr>
+		<tr>
+			<th>E-mail : </th>
+			<td><%= @admin.email %></td>
+		</tr>
+		<tr>
+			<th> Username :  </th>
+			<td> <%= @admin.username %> </td>
+		</tr>
+		
+	</table>
+</div>

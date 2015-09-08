@@ -1,0 +1,48 @@
+<% @page_title = "Pages"%>
+<div class="pages-index">
+	<div class="buttons">
+		<div class='back-link'>
+			<%= link_to('Back to Menu', {:action => 'index', :controller => 'access'}) %>
+		</div>
+		<div class="add-new">
+			<%= link_to("Add new page", {:action => 'new'}) %>
+		</div>
+	</div>
+	<div class="page-content">
+		<table>
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Category</th>
+					<th>Visible</th>
+					<th>Image</th>
+					<th>Created At</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<% @pages.each do |page| %>
+				<tbody>
+					<tr>
+						<td class="table-name"><%= page.title %></td>			
+						<td class="table-category"><%= page.category.name %></td>
+						<td class="status"><%= status_tag(page.visible) %></td>
+						<td class="index-image">
+							<% if page.image_url?  %>
+								<%= image_tag page.image_url_url(:icon) %></td>
+							<% else %>
+								<%= image_tag('no-image-icon')  %>
+							<% end %>
+						</td>
+						<td class="created-at"><%= page.created_at.strftime("%-d %b %Y") %></td>
+						<td class="action">
+							<%= link_to("Show",{:action => 'show', :id => page.id}) %>
+							<%= link_to("Edit",{:action => 'edit', :id => page.id}) %>
+							<%= link_to("Delete",{:action => 'delete', :id => page.id}) %>
+							<span id="show"><%= link_to("Show Sections",{:action => 'view',:id => page.id}) %></span>
+						</td> 
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+</div>
