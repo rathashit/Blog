@@ -13,4 +13,13 @@ class ApplicationController < ActionController::Base
   		return true
   	end
   end
+
+  def check_admin
+    # session[:username]
+    if (session[:username] == "rathashit" or session[:username] == "super.super")
+      return true
+    else
+      return false
+    end
+  end
 end

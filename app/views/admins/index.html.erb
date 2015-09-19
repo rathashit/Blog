@@ -1,9 +1,14 @@
-<div class="index_main">
-	<h3>Admins</h3>
-	<div class="add_new">
-		<%= link_to("Add new Admin", :action => 'new') %>
+<% @page_title = "All Admins"%>
+<div class="pages-index">
+	<div class="buttons">
+		<div class='back-link'>
+			<%= link_to('Back to Menu', {:action => 'index', :controller => 'access'}) %>
+		</div>
+		<div class="add-new">
+			<%= link_to("Add new admin", {:action => 'new'}) %>
+		</div>
 	</div>
-	<div class="index_content">
+	<div class="page-content">
 		<table>
 			<tr>
 				<th>First Name</th>

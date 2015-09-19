@@ -14,6 +14,7 @@ header
 	background: #2C3E50;
 	height: 155px;
 	width: 100%;
+	border-bottom: 5px solid #FFA52A;
 }
 .wrapper
 {
@@ -62,36 +63,120 @@ header
 	width: 1200px;
 	margin: auto;
 	height: auto;
-}
-.container .logo
-{
-	margin-left: 65px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	float: left;
-}
-.container .logo img
-{
-	margin-top: 10px;
-	height: 120px;
-	width: 125px;
-}
 
-nav
+	.logo
+	{
+		padding-top: 10px;
+		width: 400px;
+		overflow: hidden;
+		/*float: left;*/
+		.icon-logo
+		{
+			float: left;
+		}
+		.title-logo
+		{
+			border-top: 4px solid #666666;
+			border-bottom: 4px solid #666666;
+			color: #FFA52A;
+			width: 250px;
+			margin: auto;
+			font-size: 30px;
+			margin-top: 35px;
+			margin-left: 130px;
+			text-align: center;
+			padding: 1px 0 1px 0;
+			font-weight: normal;
+			font-family: 'Pacifico', cursive;
+			text-shadow:
+					   -1px -1px 0 #000,  
+					    1px -1px 0 #000,
+					    -1px 1px 0 #000,
+					     1px 1px 0 #000;
+
+		}
+	}
+}
+.nav-wrap
 {
 	float: right;
-	margin-right: 65px;
-	margin-top: 50px;
+	z-index: 50; 
+	margin-top: -95px;
+	margin-right: 20px;
 }
+nav
+{
+	max-width: 400px;
+	margin: auto;
+	display: inline-block;
+	padding: 0;
+	margin-right: 150px;
+}
+
 nav a
 {
 	text-decoration: none;
-	display: inline;
-	color: #F3B562;
-	padding-left: 18px;
-	font-size: 15px;
-}
+	color: #FFA52A;
+	padding: 5px 10px 5px 10px;
+	padding-bottom: 70px;
+	margin-left: 10px;
+	font-size: 16px;
+	/*border-bottom: 5px solid black; */
 
+	text-shadow: 0px 2px 3px #555;
+}
+nav a:hover
+{
+	color: #DE303F;
+	border-bottom: 5px solid #DE303F;
+}
+/*nav a:visited
+{
+	
+	border-bottom: 5px solid #DE303F; 
+}*/
+.search 
+{
+	max-width: 350px;
+	/*margin-top: 50px;*/
+	margin: auto;
+	/*float: left;*/
+	/*margin-top: 59px;*/
+	/*margin-left: 30px;*/
+	display: inline-block;
+	input[type="text"]
+	{
+		height: 15px;
+		width: 200px;
+		color: #2c3e50;
+		font-size: 14px;
+		box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+		border:1px solid #aaa;
+		font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+		padding:5px 8px;
+	}
+	input[type="submit"]
+	{
+		width: 70px;
+		height: 28px;
+		color: #2c3e50;
+		font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+		font-size: 14px;
+		background: #F9C98A;
+		display: inline-block;
+		text-align: center;
+		border: 1px solid #F8B562;
+	}
+	input[type="submit"]:hover
+	{
+		background: #F3B562;
+	}
+	input[type="submit"]:active
+	{
+		background: #9E6820;
+		color: white;
+	}
+}
 .inner-wrap
 {
 	min-width: 320px;

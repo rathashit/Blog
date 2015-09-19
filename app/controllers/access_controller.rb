@@ -4,6 +4,10 @@ class AccessController < ApplicationController
   
   before_action :confirm_login, :except => [:login, :logout, :attempt_login]
 
+  def index
+    @admin1 = check_admin
+
+  end
   def login
     render :layout => "admin_login"
   end
@@ -38,5 +42,6 @@ class AccessController < ApplicationController
     flash[:notice] = "You have logged out successfully"
   	redirect_to(:action => 'login')
   end
+
 
 end

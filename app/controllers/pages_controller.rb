@@ -2,11 +2,16 @@ class PagesController < ApplicationController
 
   before_action :confirm_login
   before_action :find_admin
-  
+  before_action :confirm_user_page_access
+
   layout 'admin' 
 
   def index
-    @pages = @admin.pages.all.order('title asc')
+    if session[:username] == 'super.super'
+      @pages = Page.all.order('created_at desc')
+    else
+      @pages = @admin.pages.all.order('title asc')
+    end
   end
 
   def show
@@ -72,6 +77,19 @@ class PagesController < ApplicationController
     page.save
     redirect_to(:action => 'show', :id => page.id)
   end
+
+  def toggleVisibility
+    @page = Page.find(params[:id])
+    if @page.visible == true
+      @page.visible = false
+    else
+      @page.visible = true
+    end
+    if @page.save
+      redirect_to(:action => 'index')
+    end
+  end
+
   private
   def page_parameters
     params.require(:page).permit(:title, :image_url, :content, :category_id, :visible)
@@ -80,5 +98,23 @@ class PagesController < ApplicationController
   def find_admin
     userId = session[:user_id]
     @admin = AdminUser.find(userId)
+  end
+
+  def confirm_user_page_access
+    if session[:username] != 'super.super' 
+      userId = session[:user_id]
+      admin = AdminUser.find(userId)
+      page_ids = admin.pages.pluck(:id)
+      # flash[:notice] = params[:id]
+      if params[:id].present?
+        page1 = Page.find(params[:id])
+        if !page_ids.include? page1.id 
+          flash[:notice] = "Unauthorized request. Access Denied"
+          redirect_to(:action => 'index')
+        else
+          
+        end     
+      end 
+    end
   end
 end

@@ -1,13 +1,18 @@
-<div class="admin_new">
-      <div class="back_link">
-            <%= link_to("<<Back to Admin listing", {:action => 'index'}) %>
+<% @page_title = "New Admin"%>
+<div class="page-form">
+      <div class="buttons">
+            <div class="back-link">
+                  <%= link_to("Back to Admins", {:action => 'index'}) %>
+            </div>
       </div>
-
-	<h3>New Admin</h3>
-	<div class="admin_form">
+	<div class="form">
 		<%= form_for(:admin, :url => {:action => 'create'}) do |f| %>
-                  <%= render(:partial => 'form', :locals => {:f => f}) %>     
-                  <%= submit_tag("Create Admin") %>
+                  <div id="inner-form">
+                        <%= render(:partial => 'form', :locals => {:f => f}) %>       
+                  </div>
+                  <div class="buttons">
+                        <%= submit_tag("Create Admin") %>
+                  </div>
             <% end %>
 	</div>
 </div>

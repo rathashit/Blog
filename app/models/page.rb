@@ -12,6 +12,10 @@ class Page < ActiveRecord::Base
 	validates :category_id, presence: true
 	validates :content, presence: true
 
+	def self.search(query)
+		where("title like ?","%#{query}%")
+	end
+
 	private
 
 	def add_default_permalink

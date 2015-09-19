@@ -2,7 +2,8 @@ class SectionsController < ApplicationController
   
   before_action :confirm_login
   before_action :find_page
-  
+  before_action :confirm_user_section_access
+
   layout 'admin'
 
   def index
@@ -68,6 +69,18 @@ class SectionsController < ApplicationController
     redirect_to(:action => 'show', :id => section.id, :page_id => @page.id)
   end
 
+  def toggleVisibility
+    @section = Section.find(params[:id])
+    if @section.visible == true
+      @section.visible = false
+    else
+      @section.visible = true
+    end
+    if @section.save
+      redirect_to(:action => 'index', :id => @section.id, :page_id => @page.id)
+    end
+  end
+
   private
 
   def section_parameters
@@ -77,4 +90,21 @@ class SectionsController < ApplicationController
   def find_page
     @page = Page.find(params[:page_id])
   end
+
+  def confirm_user_section_access
+    if !session[:username] == "super.super"
+      admin = AdminUser.find(session[:user_id])
+      page_ids = admin.pages.pluck(:id)
+      if params[:page_id].present? 
+        page1 = Page.find(params[:page_id])
+        if !page_ids.include? page1.id 
+          flash[:notice] = "Unauthorized request. Access Denied"
+          redirect_to(:action => 'index', :controller => 'pages')
+        else
+          
+        end     
+      end
+
+    end
+  end    
 end

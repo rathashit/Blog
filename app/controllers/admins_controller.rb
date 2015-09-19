@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
   layout 'admin'
   
   before_action :confirm_login
+  before_action :confirm_admin
 
   def index
     @admins = AdminUser.all.order("first_name asc")
@@ -54,6 +55,14 @@ class AdminsController < ApplicationController
   end
 
   private
+
+  def confirm_admin
+    if check_admin == false
+      flash[:notice] = "Unauthorized Access Denied"
+      redirect_to(:action => 'index', :controller => 'Access')
+    end  
+  end
+
   def admin_params
     params.require(:admin).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation)
   end

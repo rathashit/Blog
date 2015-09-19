@@ -18,8 +18,9 @@
                   <%= f.check_box :visible %>
             </li>
             <li>
-                  <%= f.label :content %>
-                  <%= f.text_area :content %>
+                  <%= tinymce %>
+                  <%= f.label :content %><br><br>
+                  <%= f.text_area :content, :class => "tinymce"%>
             </li>
       </ul>
 </div>

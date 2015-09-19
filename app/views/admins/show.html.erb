@@ -1,21 +1,24 @@
-<div class="admin_show">
-	<div class="back_link">
-		<%= link_to("<<Back to admin listing", {:action => 'index'}) %>
+<% @page_title = "View Admin"%>
+<div class="buttons" style="width: 1000px;margin:auto;margin-bottom: 10px;">
+	<div class="back-link">
+		<%= link_to("Back to Pages", {:action => 'index'}) %>
 	</div>
-	<h3>Admin details</h3>
-	<table>
-		<tr>
-			<th>Name : </th>
-			<td><%= @admin.first_name + " " + @admin.last_name %></td>
-		</tr>
-		<tr>
-			<th>E-mail : </th>
-			<td><%= @admin.email %></td>
-		</tr>
-		<tr>
-			<th> Username :  </th>
-			<td> <%= @admin.username %> </td>
-		</tr>
-		
-	</table>
+</div>
+<div class="page-show">		
+	<div class="view">
+		<ul>
+			<li>
+				<h4>Name : </h4>
+				<p><%= @admin.first_name + " " + @admin.last_name %></p>
+			</li>
+			<li>
+				<h4>E-mail : </h4>
+				<p><%= @admin.email %></p>
+			</li>
+			<li>
+				<h4> Username :  </h4>
+				<p> <%= @admin.username %> </p>
+			</li>
+		</ul>	
+	</div>
 </div>

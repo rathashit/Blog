@@ -16,9 +16,8 @@
 						<li><%= page.admin_users[0].first_name + " " + page.admin_users[0].last_name%></li>
 					</ul>
 				</div>
-				<% section = page.sections.order('position asc').where('visible = true').first %>
 				<div class="desc">
-					<p><%= truncate(strip_tags(section.content),length: 80) %></p>
+					<p><% truncate((page.content),length: 80) %></p>
 				</div>
 				<div class="continue-link"><p><%= link_to('continue reading', {:action => 'view', :permalink => page.permalink}) %></p> <p id='arrow'>&#10141</p></div>
 			</div>

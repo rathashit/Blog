@@ -11,5 +11,12 @@
 		<tr>
 			<td><%= link_to("Messages", {:action => 'index', :controller => 'Contacts'} ) %></td>
 		</tr>
+		<% if @admin1 %>
+			<tr>
+				<td><%= link_to("Add Users", {:action => 'index', :controller => 'Admins'} ) %></td>	
+			</tr>
+		<% else %>
+			
+		<% end %>
 	</table>
 </div>

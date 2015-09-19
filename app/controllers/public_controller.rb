@@ -5,7 +5,11 @@ class PublicController < ApplicationController
   before_action :find_pages
 
   def index
-  	@pages = Page.all.where(:visible => true).order('created_at DESC')
+    if params[:search]
+      @pages = Page.search(params[:search]).order('created_at desc')      
+    else
+      @pages = Page.all.where(:visible => true).order('created_at DESC')    
+    end    
   end
 
   def about

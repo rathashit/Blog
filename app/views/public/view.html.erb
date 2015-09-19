@@ -22,7 +22,7 @@
 				<% if section.img_url? %>
 					<span><%= section.img_desc %></span>
 				<% end %>
-				<p><%= strip_tags(section.content) %></p>
+				<p><%= section.content.html_safe %></p>
 			<% end %>
 		</div>
 	</div>	

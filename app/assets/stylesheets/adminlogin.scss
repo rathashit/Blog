@@ -3,7 +3,6 @@ body,html
 	margin: 0;
 	padding: 0;
 	background: url('seam1.jpg');
-	/*background: rgba(44, 62, 80, 1);*/
 	font-family: Arial,'Helvetica Neue', Helvetica, sans-serif;
 }
 	
@@ -22,11 +21,8 @@ body,html
 		padding-top: 15px;	
 		padding-bottom: 15px;
 		text-align: center;
-		/*color: #F3B562;*/
 		color: white;
-		/*border: 1px solid #26A65B;*/
 		background: #E74C3C;;	
-		/*background: 	*/
 	}
 }
 #inner
@@ -44,12 +40,9 @@ body,html
 	li
 	{
 		padding-bottom: 10px;
-		/*background: white;*/
 	}	
 	label
 	{
-		/*width: 200px;*/
-		/*margin-bottom: 1s0px;*/
 		color: rgba(255,255,255,0.9);
 		font-size: 16	px;
 	}
@@ -71,8 +64,6 @@ body,html
 		height: 35px;
 		background: #E74C3C;
 		border: 1px solid #F74C3C;	
-		/*border: 1px solid #26A65B;*/
-	    /*color: #F3B562;*/
 	    color: white;
 	    font-size: 16px;
 	}
@@ -82,7 +73,6 @@ body,html
 		height: 35px;
 		background: #D91E18;
 		border: 1px solid #96281B;	
-		/*border: 1px solid #26A65B;*/
 	    color: white;
 	    font-size: 16px;
 	}
