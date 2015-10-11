@@ -8,10 +8,3 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-!/log/.keep
-/tmp
-.DS_Store
-db/
-/config/
-/controllers/access_controller.rb
