@@ -15,7 +15,7 @@ class AdminsController < ApplicationController
 
   def update
     @admin = AdminUser.find(params[:id])
-    if @admin.update_parameters(admin_params)
+    if @admin.update_attributes(admin_params)
       flash[:notice] = "Details updated sucessfully"
       redirect_to(:action => "show", :id => @admin.id)
     else
