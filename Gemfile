@@ -43,7 +43,7 @@ gem 'mini_magick'
 group :production do
   gem 'pg'
 
-  #gem 'rails_12factor'
+  gem 'rails_12factor'
 
 end
 
