@@ -5,16 +5,22 @@
   <%= stylesheet_link_tag 'admins', media: 'all' %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
-
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<header>
-		<div id="admin-top"><h1>Admin Area</h1></div>
+		<div class="container">	
+			<div class="logo">
+				<div class="icon-logo"><%= image_tag("monk-final.png") %></div>
+				<h2 class="title-logo"> The Humble Post </h2>
+			</div>
+			<div id="admin-top"><h1>Admin Area</h1></div>
 			<nav>
 			
 				<%= link_to("HOME", {:action => 'index', :controller => 'Access'}) %>
 				<%= link_to("LOGOUT", {:action => 'logout', :controller => 'Access'}) %>
 			<nav>
+		</div>
 	</header>
 
 	<div class="wrapper">

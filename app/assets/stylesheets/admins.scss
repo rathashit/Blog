@@ -24,7 +24,7 @@ header
 	padding: 0;
 	margin: 0;
 	background: #2C3E50;
-	height: 100px;
+	height: 155px;
 	width: 100%;
 }
 footer
@@ -55,7 +55,7 @@ footer
 	width: 20%;
 	margin: auto;
 	height: auto;
-	/*overflow: hidden;*/
+	padding-top: 35px;
 	text-align: center;
 }
 #admin-top h1
@@ -79,6 +79,45 @@ nav a
 	color: #F3B562;
 	font-size: 16px;
 	padding-right: 25px;
+}
+.container
+{
+	width: 1200px;
+	margin: auto;
+	height: auto;
+
+	.logo
+	{
+		padding-top: 10px;
+		width: 400px;
+		overflow: hidden;
+		float: left;
+		.icon-logo
+		{
+			float: left;
+		}
+		.title-logo
+		{
+			border-top: 4px solid #666666;
+			border-bottom: 4px solid #666666;
+			color: #FFA52A;
+			width: 250px;
+			margin: auto;
+			font-size: 30px;
+			margin-top: 35px;
+			margin-left: 130px;
+			text-align: center;
+			padding: 1px 0 1px 0;
+			font-weight: normal;
+			font-family: 'Pacifico', cursive;
+			text-shadow:
+					   -1px -1px 0 #000,  
+					    1px -1px 0 #000,
+					    -1px 1px 0 #000,
+					     1px 1px 0 #000;
+
+		}
+	}
 }
 .notice
 {
