@@ -42,6 +42,7 @@ gem 'mini_magick'
 # gem 'capistrano-rails', group: :development
 group :production do
   gem 'pg'
+  gem 'thin'
 end
 
 group :development, :test do
@@ -56,6 +57,6 @@ group :development, :test do
 
   gem 'mysql2'
 
-  gem 'thin'
+  
 end
 
