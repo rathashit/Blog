@@ -42,7 +42,7 @@ gem 'mini_magick'
 # gem 'capistrano-rails', group: :development
 group :production do
   gem 'pg'
-  gem 'thin'
+  gem 'rails_12factor'
 end
 
 group :development, :test do
@@ -50,7 +50,7 @@ group :development, :test do
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
