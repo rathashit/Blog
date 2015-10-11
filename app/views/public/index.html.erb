@@ -17,7 +17,7 @@
 					</ul>
 				</div>
 				<div class="desc">
-					<p><% truncate((page.content),length: 80) %></p>
+					<p><%= truncate((page.content),length: 80) %></p>
 				</div>
 				<div class="continue-link"><p><%= link_to('continue reading', {:action => 'view', :permalink => page.permalink}) %></p> <p id='arrow'>&#10141</p></div>
 			</div>
