@@ -17,7 +17,7 @@ class AdminsController < ApplicationController
     @admin = AdminUser.find(params[:id])
     if @admin.update_parameters(admin_params)
       flash[:notice] = "Details updated sucessfully"
-      redirect_to(:action => 'show', :id => @admin.id)
+      redirect_to(:action => "show", :id => @admin.id)
     else
       flash[:notice] = "Something went wrong"
       render('edit')
