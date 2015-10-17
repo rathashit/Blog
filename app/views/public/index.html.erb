@@ -1,44 +1,48 @@
-<div class="left-content">
+<div class="content">
 	<% @pages.each do |page| %>
-		<div class="page">
-			<div class="image">
+		<article>
+			<div class="content-image">
 				<% if page.image_url? %>
 					<%= link_to(image_tag page.image_url.url(:thumb), {:action => 'view', :permalink => page.permalink}) %>
 				<% else %>
 					<%= link_to(image_tag("default-no-img.jpg"), {:action => 'view', :permalink => page.permalink}) %>
 				<% end %>
 			</div>
-			<div class="inner-wrap">
-				<div class="title"><%= link_to("#{page.title}", {:action => 'view', :permalink => page.permalink}) %></div>	
-				<div class="info">
-					<ul>
-						<li><%= page.created_at.to_s(:long) %></li>
-						<li><%= page.admin_users[0].first_name + " " + page.admin_users[0].last_name%></li>
-					</ul>
-				</div>
-				<div class="desc">
+			<div class="right-content">
+				<header class="post-title">
+					<h2><%= link_to("#{page.title}", {:action => 'view', :permalink => page.permalink}) %></h2>
+				</header>
+				<footer>
+					<p class="page-info" >
+						<%= page.created_at.to_s(:long) %>
+						<%= page.admin_users[0].first_name + " " + page.admin_users[0].last_name%>
+					</p>
+				</footer>
+				<content>
 					<p><%= page.content.html_safe %></p>
-				</div>
-				<div class="continue-link"><p><%= link_to('continue reading', {:action => 'view', :permalink => page.permalink}) %></p> <p id='arrow'>&#10141</p></div>
+					<%= link_to('	continue reading ', {:action => 'view', :permalink => page.permalink}) %>
+				</content>
 			</div>
-		</div>	
+		</article>	
 	<% end %>
 </div>
-<div class="right-content">
-	<div class="post-wraper">
-		<h3>Latest Posts</h3>
+<aside>
+	<article>
+		<h2>Latest Posts</h2>
 		<ul>
 			<% @latestPages.each do |page| %>
 			<li><%= link_to(page.title, {:action => 'view', :permalink => page.permalink}) %></li>
 			<% end %>
 		</ul>
-	</div>
-	<div class="post-wraper">
-		<h3>Most Popular Posts</h3>
+	</article>
+</aside>
+<aside>
+	<article>
+		<h2>Most Popular Posts</h2>
 		<ul>
 			<% @popularPages.each do |page| %>
 			<li><%= link_to(page.title, {:action => 'view', :permalink => page.permalink}) %></li>
 			<% end %>
 		</ul>
-	</div>
-</div>
+	</article>
+</aside>

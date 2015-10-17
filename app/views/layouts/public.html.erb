@@ -5,33 +5,30 @@
   <%= stylesheet_link_tag 'public', media: 'all'%>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width-device-width, initial-scale=1.0">
 </head>
-<body id="public">
-	<header>
-		<div class="container">
-			<div class="logo">
-				<div class="icon-logo"><%= image_tag("monk-final.png") %></div>
-				<h2 class="title-logo"> The Humble Post </h2>
-			</div>
-			<div class="nav-wrap">
-				<nav>
-				<ul>
-					<%= link_to("BLOG", :action => 'index' ) %>
-					<%= link_to("ABOUT", :action => 'about') %>
-					<%= link_to("CONTACT ME", :action => 'contact') %>
-				</ul>
-				</nav>
-				<div class="search">
-					<%= form_tag({action: 'index', controller: 'Public' }, method: 'get') do %>
-							<%= text_field_tag :search, params[:search], placeholder: "Search Articles"%>
-							<%= submit_tag("Search") %>
-					<% end %>
-				</div>
-			</div>
+<body class="public-body">
+	<header class="mainHeader">
+		<div class="logo">
+			<%= image_tag("monk-final.png") %>
+			<h2 class="title-logo"> The Humble Post </h2>
+		</div>
+		<nav>
+			<ul>
+				<li><%= link_to("BLOG", :action => 'index' ) %></li>
+				<li><%= link_to("ABOUT", :action => 'about') %></li>
+				<li><%= link_to("CONTACT ME", :action => 'contact') %></li>
+			</ul>
+		</nav>
+		<div class="search">
+			<%= form_tag({action: 'index', controller: 'Public' }, method: 'get') do %>
+				<%= text_field_tag :search, params[:search], placeholder: "Search Articles"%>
+				<%= submit_tag("Search") %>
+			<% end %>
 		</div>
 	</header>
 	
-	<div class="wrapper">
+	<div class="mainContent">
 		<% if !flash.empty? %>
 			<div class="notice">
 				<p><%= flash[:notice] %></p>
@@ -39,15 +36,8 @@
 		<% end %>
 	 	<%= yield %>
 	</div>
-	<footer>
-		<div class="footer-wrap">
-			<div class="copyright">
-		 		<p> © 2015, The Humble Post | All Rights Reserved</p>
-		 		
-			</div>
-			<div class="social-links">
-			</div>
-		</div>
+	<footer class="mainFooter">
+		<p>&copy; 2015, The Humble Post | All Rights Reserved</p>
 	</footer>
 </body>
 </html>
