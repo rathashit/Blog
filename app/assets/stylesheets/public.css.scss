@@ -235,15 +235,36 @@ a
 	{
 		/*overflow: hidden;*/
 		padding: 1% 4%;
-		width: 90%;
+		width: 100%;
+		text-align: center;
 		/*border: 2px solid white;*/
 		float: left;
 	}
 	.mainHeader img
 	{
-		width: 30%;
+		width: 35%;
 		height: auto;
 		float: left;
+	}
+	.mainHeader h2
+	{
+
+		border-top: 4px solid #666666;
+		border-bottom: 4px solid #666666;
+		color: #FFA52A;
+		width: 55%;
+		float: left;
+		font-size: 170%;
+		margin: 8% 0 0 3%;
+		text-align: center;
+		padding: 1px 0 1px 0;
+		font-weight: normal;
+		font-family: 'Pacifico', cursive;
+		text-shadow:
+				   -1px -1px 0 #000,  
+				    1px -1px 0 #000,
+				    -1px 1px 0 #000,
+				     1px 1px 0 #000;
 	}
 	.mainHeader nav
 	{
