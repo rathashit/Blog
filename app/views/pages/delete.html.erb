@@ -6,7 +6,7 @@
 </div>
 <div class="page-delete">
 	<p> Do you want to delete <b><%= @page.title %></b> permanently? </p>
-	<%= form_for(:page, :url => {:action => 'destroy', :id => @admin.id}) do |f| %>
+	<%= form_for(:page,:html => {:multipart => true}, :url => {:action => 'destroy', :id => @admin.id}) do |f| %>
 			<%= submit_tag("Delete page") %>
 	<% end %>
 </div>

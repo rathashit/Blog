@@ -7,7 +7,7 @@
       </div>
 	<div class="form">
 		
-		<%= form_for(:admin, :url => {:action => 'update', :id => @admin.id}) do |f| %>
+		<%= form_for(:admin,:html => {:multipart => true}, :url => {:action => 'update', :id => @admin.id}) do |f| %>
 			<div id="inner-form">
                 <%= render(:partial => 'form', :locals => {:f => f}) %>       
             </div>

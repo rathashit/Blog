@@ -6,7 +6,7 @@
     </div>
   </div>
 	<div class="form">
-    <%= form_for(:category, :url => {:action => 'update', :id => @category.id}) do |f| %>
+    <%= form_for(:category,:html => {:multipart => true}, :url => {:action => 'update', :id => @category.id}) do |f| %>
     <div id="inner-form">
       <%= render(:partial => 'form', :locals => {:f => f}) %>
     </div>

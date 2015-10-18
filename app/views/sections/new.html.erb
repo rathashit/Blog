@@ -8,7 +8,7 @@
 
 	<div class="form">
         
-     <%= form_for(:section, :url => {:action => 'create', :page_id => @page.id}, :html => {:multipart => true}) do |f| %>
+     <%= form_for(:section,:html => {:multipart => true}, :url => {:action => 'create', :page_id => @page.id}, :html => {:multipart => true}) do |f| %>
      <div id="inner-form">
        <%= render(:partial => 'form', :locals => {:f => f}) %>
       </div>
