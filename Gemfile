@@ -34,6 +34,7 @@ gem 'rmagick'
 
 gem 'mini_magick'
 
+gem 'fog'
 
 # gem "wysiwyg-rails"
 # Use Unicorn as the app server
