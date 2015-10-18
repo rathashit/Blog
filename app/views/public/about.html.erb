@@ -3,46 +3,46 @@
 <head>
 	<title>The Humble Post | About</title>
 	<%= stylesheet_link_tag "about.css" %>
+	<%= csrf_meta_tags %>
 	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
 </head>
 <body>
-	<header>
-		<div class="container">
-			<div class="logo">
-				<div class="icon-logo"><%= image_tag("monk-final.png") %></div>
-				<h2 class="title-logo"> The Humble Post </h2>
-			</div>
-			<div class="nav-wrap">
-				<nav>
-				<ul>
-					<%= link_to("BLOG", :action => 'index' ) %>
-					<%= link_to("ABOUT", :action => 'about') %>
-					<%= link_to("CONTACT ME", :action => 'contact') %>
-				</ul>
-				</nav>
-				<div class="search">
-					<%= form_tag({action: 'index', controller: 'Public' }, method: 'get') do %>
-							<%= text_field_tag :search, params[:search], placeholder: "Search Articles"%>
-							<%= submit_tag("Search") %>
-					<% end %>
-				</div>
-			</div>
+	<header class="mainHeader">
+		<div class="logo">
+			<%= image_tag("monk.png") %>
+			<h2 class="title-logo"> The Humble Post </h2>
+		</div>
+		<nav>
+			<ul>
+				<li><%= link_to("BLOG", :action => 'index' ) %></li>
+				<li><%= link_to("ABOUT", :action => 'about') %></li>
+				<li><%= link_to("CONTACT", :action => 'contact') %></li>
+			</ul>
+		</nav>
+		<div class="search">
+			<%= form_tag({action: 'index', controller: 'Public' }, method: 'get') do %>
+				<%= text_field_tag :search, params[:search], placeholder: "Search Articles"%>
+				<%= submit_tag("Search") %>
+			<% end %>
 		</div>
 	</header>
+
+
 	<div id="about-wrap">
-			<h2>About The Humble Post</h2>
+		<h2>About The Humble Post</h2>
 		<div id="left-wrap">
-			<p> <span class="large">W</span>elcome to the humble post. We post here from anything to everything.</p>
+			<article><p> <span class="large">W</span>elcome to the humble post. We post here from anything to everything.</p>
 			<p>Let it be science, technology, gadget, books, reviews.You name it, we have it (if not we will be updating) all here and continuously growing day be day to bring you more content.</p>
 			<p>We have a fine set of authors from different parts of the country that are here to provide quality content and make your read more enjoyable.</p>
-			
+			</article>
 			<h3>Authors in the house</h3>
 			<div id="author-wrap">
 				<div class="author">
 					<%= image_tag('monika1.jpeg') %>
 					<h4>Monika Upadhayay</h4>
 					<p>
-						Novels, 
+						Novels,  
 					</p>
 				</div>
 			</div>
@@ -55,16 +55,10 @@
 			<p> Love the smell of food, enchanting music, geeky gadgets, zooming cars & bikes and movies that makes you think.</p>
 		</div>
 	</div>
-	<footer>
-		<div class="footer-wrap">
-			<div class="copyright">
-		 		<p> © 2015, The Humble Post | All Rights Reserved</p>
-		 		
-			</div>
-			<div class="social-links">
-					
-			</div>
-		</div>
+
+
+	<footer class="mainFooter">
+		<p>&copy; 2015, The Humble Post | All Rights Reserved</p>
 	</footer>
 </body>
 </html>

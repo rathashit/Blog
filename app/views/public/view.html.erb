@@ -1,18 +1,18 @@
-<div class="left-content">
-	<div class="view-page">
+<div class="content">
+	<article>
 		<div class="view-title">
 			<h2><%= @page.title %></h2>
 		</div>
 		<div class="main_img">
 			<%= image_tag @page.image_url if @page.image_url? %>
 		</div>
-		<div class="details">
-			<ul>
-				with&nbsp&nbsp<li><%= @page.admin_users[0].first_name + " " + @page.admin_users[0].last_name%></li>
-				<li><%= @page.created_at.to_s(:long) %></li>
-			</ul>
-		</div>
-		<div class="content">
+		<footer>
+			<p class="page-info" >
+				<%= @page.created_at.to_s(:long) %>
+				<%= @page.admin_users[0].first_name + " " + @page.admin_users[0].last_name%>
+			</p>
+		</footer>
+		<div class="page-content">
 			<% sections = @page.sections.order('position asc').where('visible = true') %>
 			<% sections.each do |section| %>
 				<h3><%= section.name %></h3>
@@ -25,24 +25,26 @@
 				<p><%= section.content.html_safe %></p>
 			<% end %>
 		</div>
-	</div>	
+	<article>	
 </div>
 
-<div class="right-content">
-	<div class="post-wraper">
-		<h3>Latest Posts</h3>
+<aside>
+	<article>
+		<h2>Latest Posts</h2>
 		<ul>
 			<% @latestPages.each do |page| %>
 			<li><%= link_to(page.title, {:action => 'view', :permalink => page.permalink}) %></li>
 			<% end %>
 		</ul>
-	</div>
-	<div class="post-wraper">
-		<h3>Most Popular Posts</h3>
+	</article>
+</aside>
+<aside>
+	<article>
+		<h2>Most Popular Posts</h2>
 		<ul>
 			<% @popularPages.each do |page| %>
 			<li><%= link_to(page.title, {:action => 'view', :permalink => page.permalink}) %></li>
 			<% end %>
 		</ul>
-	</div>
-</div>
+	</article>
+</aside>
