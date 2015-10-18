@@ -231,20 +231,17 @@ a
 
 @media only screen and (min-width: 150px) and (max-width: 600px)
 {
+	
 	.logo
 	{
-		/*overflow: hidden;*/
-		padding: 1% 4%;
-		width: 100%;
-		text-align: center;
-		/*border: 2px solid white;*/
-		float: left;
+		width: 90%;
 	}
 	.mainHeader img
 	{
-		width: 40%;
+		width: 35%;
 		height: auto;
-		/*float: left;*/
+		float: left;
+		padding-left: 3%;
 	}
 	.mainHeader h2
 	{
@@ -252,10 +249,10 @@ a
 		border-top: 4px solid #666666;
 		border-bottom: 4px solid #666666;
 		color: #FFA52A;
-		width: 50%;
+		width: 55%;
 		float: left;
-		font-size: 180%;
-		margin: 8% 0 0 2%;
+		font-size: 190%;
+		margin: 8% 0 0 3%;
 		text-align: center;
 		padding: 1px 0 1px 0;
 		font-weight: normal;
@@ -268,18 +265,16 @@ a
 	}
 	.mainHeader nav
 	{
-		/*border: 2px solid black;*/
-		width: 97%;
+		width: 98%;
 		float: left;
 		text-align: center;
-		margin: 5.5% 0 0 2%;
 
 	}
 	.search
 	{
 		float: left;
-		width: 97%;
-		margin: 5% 3% ;
+		width: 98%;
+		margin: 5% 2%;
 		text-align: center;
 	}
 	.mainContent
@@ -289,19 +284,15 @@ a
 		box-shadow: 0px 20px 20px 0px #c5c5c5;
 		margin: 0 auto;
 		overflow: hidden;
-		/*border: 2px solid black;*/
 	}
 	.content 
 	{
-		/*border-right: 2px solid #d5d5d5;*/
-		/*margin: 2% 0 2% 2%;*/
 		float: left;
-		width: 100%;
+		width: 98%;
 	}
 	.content article
 	{
-		/*width: 60%;*/
-		margin: 0 4%;
+		margin: 0 2%;
 		padding: 4% 0;
 		float: left;
 		border-bottom: 1px solid #d5d5d5;
@@ -310,16 +301,47 @@ a
 	.content article .content-image
 	{
 		float: left;
-		width: 100%;
+		width: 98%;
 		text-align: center;
 	}
 	.content article .right-content
 	{
-		width: 100%;
-		float: left;
+		width: 97%;
+		margin: 0 auto;
+		/*border: 2px solid black;*/
 	}
+	.post-title
+	{
+		/*width: 90%;*/
+		margin: auto;
+		text-align: center;
+	}
+	.content article h2 a
+	{
+		margin: auto;
+		color: #de3033;
+		font-size: 24px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	.content .page-info
+	{
+		text-align: center;
+		color: #989ca0;
+		font-size: 13px;
+	}
+	.content content p
+	{
+		font-size: 15px;
+		color: #2c3e50;
+	}
+	.content content a
+	{
+		float: right;
+		color: #f74447;
+		font-size: 16px;
 
-
+	}
 	.mainContent aside
 	{
 		width: 90%;
