@@ -11,4 +11,4 @@
 /log/*
 !/log/.keep
 /tmp
-./config/*
+./config/initializers/carrierwave.rb
